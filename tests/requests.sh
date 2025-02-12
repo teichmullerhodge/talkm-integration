@@ -1,1 +1,1 @@
-ab -n 9564 -c 9564 https://api.talkm.com.br/is-prime?number=2131131137
+ab -n 9564 -c 9564 https://api.talkm.com.br/is-prime?number=1844674407370955161

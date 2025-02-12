@@ -17,7 +17,6 @@ struct PrimeQuery {
     number: u64,
 }
 
-// Efficient primality test
 fn is_prime_number(n: u64) -> bool {
 
     if n == 2 || n == 3 {
