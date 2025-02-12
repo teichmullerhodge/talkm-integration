@@ -111,7 +111,7 @@ async fn main() -> std::io::Result<()> {
         .service(send_message)
         .service(is_prime)
     })
-    .bind(("127.0.0.1", PORT))?
+    .bind(("0.0.0.0", PORT))?
     .run()
     .await
 
