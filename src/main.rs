@@ -56,6 +56,7 @@ async fn is_prime(query: web::Query<PrimeQuery>) -> impl Responder {
 
 #[get("/status")]
 async fn hello() -> impl Responder {
+    println!("Status acessado!");
     HttpResponse::Ok().body("Hello world!")
 }
 
@@ -102,8 +103,6 @@ async fn send_message(
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
 
-    const PORT: u16 = 8080;
-    print!("Server is running on port {}", PORT);
 
     HttpServer::new(|| {
         App::new()
@@ -111,7 +110,7 @@ async fn main() -> std::io::Result<()> {
         .service(send_message)
         .service(is_prime)
     })
-    .bind(("0.0.0.0", PORT))?
+    .bind("0.0.0.0:8080")?
     .run()
     .await
 
