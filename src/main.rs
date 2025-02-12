@@ -110,7 +110,7 @@ async fn main() -> std::io::Result<()> {
         .service(send_message)
         .service(is_prime)
     })
-    .bind(("127.0.0.1", 8080))?
+    .bind(("0.0.0.0", 8080))?  // Garante que escutará em todas as interfaces    
     .run()
     .await
 
